@@ -1,4 +1,6 @@
 from ClassDomino import *
+# Importa as classes definidas em ClassDomino.py
+
 
 welcome_message = (
     "Bem-vindo ao Jogo de Dominó!\n\n"
@@ -23,6 +25,7 @@ def main():
             continue
         is_valid_player_number = True
 
+# Cria um conjunto de peças de dominó
     domino_set = DominoSet()
 
     # Criação de todas as peças de dominó
@@ -64,6 +67,8 @@ def main():
                 # Se pelo menos um jogador não pulou o turno, altere para False
                 all_players_cannot_play = False
 
+
+            # Exibe o estado atual do tabuleiro e a mão do jogador
             print(" ")
             print(" ==== ==== ==== ")
             print(f"Tabuleiro: {board}")
@@ -75,7 +80,7 @@ def main():
 
             if not player.skipped_turn:
                 while True:
-                    try:
+                    try: # Solicita ao jogador que escolha uma peça para jogar
 
                         print(" ")
                         print(" - - - - - - - - ")
