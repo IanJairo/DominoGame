@@ -1,18 +1,19 @@
 import random
 
-
+# Classe para representar uma peça de dominó
 class DominoPiece:
     def __init__(self, value1, value2):
         self.value1 = value1
         self.value2 = value2
         self.next = None
 
-
+# Classe para representar um conjunto de peças de dominó
 class DominoSet:
     def __init__(self):
         self.head = None
         self.tail = None
 
+# Adiciona nova peça ao dominó
     def add_piece(self, value1, value2):
         new_piece = DominoPiece(value1, value2)
         if self.head is None:
@@ -21,7 +22,8 @@ class DominoSet:
         else:
             self.tail.next = new_piece
             self.tail = new_piece
-
+            
+# Remove uma peça ao dominó
     def remove_piece(self, piece):
         current = self.head
         previous = None
@@ -35,6 +37,7 @@ class DominoSet:
             previous = current
             current = current.next
 
+# Embaralhar
     def shuffle(self):
         pieces = []
         current = self.head
@@ -61,7 +64,7 @@ class DominoSet:
             yield current
             current = current.next
 
-
+# Classe para representar um jogador
 class Player:
     def __init__(self, name):
         self.name = name
@@ -95,7 +98,7 @@ class Player:
     def reset_turn(self):
         self.skipped_turn = False
 
-
+# Classe para representar o tabuleiro de dominó
 class DominoBoard:
     def __init__(self):
         self.pieces = []
